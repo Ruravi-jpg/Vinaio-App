@@ -1,0 +1,33 @@
+﻿<Application x:Class="Vinaio.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Vinaio"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
+
+                <ResourceDictionary>
+                    <Color x:Key="PrimaryColorAux">#332f31</Color>
+                    <Color x:Key="AccentColorAux">#f1f52f</Color>
+                    <Color x:Key="SecondaryColorAux">#0c935b</Color>
+                    <Color x:Key="SecondaryAccentColorAux">#d4836e</Color>
+                    <Color x:Key="TextColorAux">#35b3e2</Color>
+                    
+                    
+                    <SolidColorBrush x:Key="PrimaryColor" Color="{StaticResource PrimaryColorAux}" />
+                    <SolidColorBrush x:Key="SecondaryColor" Color="{StaticResource SecondaryColorAux}" />
+                    <SolidColorBrush x:Key="AccentColor" Color="{StaticResource AccentColorAux}" />
+                    <SolidColorBrush x:Key="SecondaryAccentColor" Color="{StaticResource SecondaryAccentColorAux}" />
+                    <SolidColorBrush x:Key="TextColor" Color="{StaticResource TextColorAux}" />
+
+                </ResourceDictionary>
+                
+        </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

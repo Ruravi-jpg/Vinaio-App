@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="Vinaio.ConfigurationUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Vinaio"
+             mc:Ignorable="d"
+             Background="{DynamicResource PrimaryColor}" Height="612" Width="1066">
+    <Grid>
+        <StackPanel Margin="10">
+            <!-- Database Configuration Section -->
+            <GroupBox Header="Database Configuration" Foreground="{DynamicResource SecondaryAccentColor}">
+                <StackPanel>
+                    <TextBlock Text="Access Database File Path:" />
+                    <Button Content="Seleccionar Base de Datos" Click="btnSelectDatabaseFile_Click" Width="236" Background="{DynamicResource TextColor}" Foreground="{DynamicResource AccentColor}" HorizontalAlignment="Left" Margin="0,10,0,0" />
+                    <TextBox x:Name="txtDatabaseFilePath" IsReadOnly="True"  BorderBrush="{DynamicResource SecondaryAccentColor}" Foreground="{DynamicResource TextColor}"/>
+
+                    <TextBlock Text="Database Server:" />
+                    <TextBox x:Name="txtDatabaseServer" BorderBrush="{DynamicResource SecondaryAccentColor}" Foreground="{DynamicResource TextColor}" />
+
+                    <TextBlock Text="Database Name:" />
+                    <TextBox x:Name="txtDatabaseName" BorderBrush="{DynamicResource SecondaryAccentColor}" Foreground="{DynamicResource TextColor}" />
+
+                    <TextBlock Text="Username:" />
+                    <TextBox x:Name="txtUsername" BorderBrush="{DynamicResource SecondaryAccentColor}" Foreground="{DynamicResource TextColor}"/>
+
+                    <TextBlock Text="Password:" />
+                    <PasswordBox x:Name="txtPassword" BorderBrush="{DynamicResource SecondaryAccentColor}" Foreground="{DynamicResource TextColor}" />
+                </StackPanel>
+            </GroupBox>
+
+            <!-- Email Configuration Section -->
+            <GroupBox Header="Email Configuration" Foreground="{DynamicResource SecondaryAccentColor}">
+                <StackPanel>
+                    <TextBlock Text="SMTP Server:" />
+                    <TextBox x:Name="txtSmtpServer" BorderBrush="{DynamicResource SecondaryAccentColor}"  Foreground="{DynamicResource TextColor}"/>
+
+                    <TextBlock Text="Port:" />
+                    <TextBox x:Name="txtSmtpPort" BorderBrush="{DynamicResource SecondaryAccentColor}"  Foreground="{DynamicResource TextColor}"/>
+
+                    <TextBlock Text="Username:" />
+                    <TextBox x:Name="txtSmtpUsername" BorderBrush="{DynamicResource SecondaryAccentColor}"  Foreground="{DynamicResource TextColor}"/>
+
+                    <TextBlock Text="Password:" />
+                    <PasswordBox x:Name="txtSmtpPassword" BorderBrush="{DynamicResource SecondaryAccentColor}"  Foreground="{DynamicResource TextColor}"/>
+
+                    <CheckBox x:Name="chkEnableSsl" Content="Enable SSL" />
+                </StackPanel>
+            </GroupBox>
+
+            <!-- Save and Cancel Buttons -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                <Button Content="Save" Click="btnSave_Click" Margin="5" Background="{DynamicResource SecondaryColor}" Foreground="{DynamicResource AccentColor}"/>
+
+
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,44 @@
+﻿<Window x:Class="Vinaio.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Vinaio"
+        mc:Ignorable="d"
+        Title="VinaioApp" Height="585" Width="1005"
+        Background="{StaticResource PrimaryColor}" WindowState="Maximized">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Vertical Navigation Bar -->
+        <ListBox x:Name="NavBarListBox" Grid.Column="0" Background="{DynamicResource MaterialDesign.Brush.Chip.Background}">
+            <ListBoxItem>
+                <Image Source="/Logo.png" Height="47" Width="128" />
+            </ListBoxItem>
+            <ListBoxItem>
+                <Button Content="Inicio" Style="{StaticResource MaterialDesignFlatButton}" Tag="Inicio" Foreground="{StaticResource AccentColor}" Click="Button_Click"/>
+            </ListBoxItem>
+            <ListBoxItem>
+                <Button Content="Insertar Producto" Style="{StaticResource MaterialDesignFlatButton}" Tag="InsertarVino" Foreground="{StaticResource AccentColor}" Click="Button_Click"/>
+            </ListBoxItem>
+            <ListBoxItem>
+                <Button Content="Buscar y Editar Productos" Style="{StaticResource MaterialDesignFlatButton}" Tag="BuscarVino" Foreground="{StaticResource AccentColor}" Click="Button_Click"/>
+            </ListBoxItem>
+            <ListBoxItem>
+                <Button Content="Configuración" Style="{StaticResource MaterialDesignFlatButton}" Tag="Configuracion" Foreground="{StaticResource AccentColor}" Click="Button_Click"/>
+            </ListBoxItem>
+            <ListBoxItem>
+                <Button Content="Reportes" Style="{StaticResource MaterialDesignFlatButton}" Tag="Reportes" Foreground="{StaticResource AccentColor}" Click="Button_Click"/>
+            </ListBoxItem>
+        </ListBox>
+
+        <!-- Main Content Area -->
+        <ContentControl x:Name="MainContentControl" Grid.Column="1">
+            <!-- Content will be dynamically loaded here -->
+        </ContentControl>
+    </Grid>
+</Window>
