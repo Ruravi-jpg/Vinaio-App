@@ -105,7 +105,7 @@ namespace Vinaio.Reports
                 Name = "BottleBaseCost",
                 OptionalColumnName = "Costo base de la botella",
                 Calculation = (row, parameters) => Convert.ToDouble(row["BottleBaseCost"]),
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = false
             };
 
@@ -114,7 +114,7 @@ namespace Vinaio.Reports
                 Name = "RY",
                 OptionalColumnName = "Ry",
                 Calculation = (row, parameters) => Convert.ToDouble(row["RY"]),
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = false
             };
 
@@ -123,7 +123,7 @@ namespace Vinaio.Reports
                 Name = "Freight",
                 OptionalColumnName = "Costo del Flete",
                 Calculation = (row, parameters) => Convert.ToDouble(row["Freight"]),
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = false
             };
 
@@ -132,7 +132,7 @@ namespace Vinaio.Reports
                 Name = "BR",
                 OptionalColumnName = "Broker",
                 Calculation = (row, parameters) => Convert.ToDouble(row["BR"]),
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = false
             };
 
@@ -141,7 +141,7 @@ namespace Vinaio.Reports
                 Name = "WAR",
                 OptionalColumnName = "Costo almacén",
                 Calculation = (row, parameters) => Convert.ToDouble(row["WAR"]),
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = false
             };
 
@@ -150,7 +150,7 @@ namespace Vinaio.Reports
                 Name = "CaseWholesalePrice",
                 OptionalColumnName = "Precio de venta mayoreo por caja",
                 Calculation = (row, parameters) => Convert.ToDouble(row["CaseWholesalePrice"]),
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = false
             };
 
@@ -158,7 +158,7 @@ namespace Vinaio.Reports
             {
                 Name = "STTax",
                 Calculation = (row, parameters) => Convert.ToDouble(row["STTax"]),
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = false
             };
 
@@ -167,7 +167,7 @@ namespace Vinaio.Reports
                 Name = "CaseRetailPrice",
                 OptionalColumnName = "Precio de venta por caja al menudeo",
                 Calculation = (row, parameters) => Convert.ToDouble(row["CaseRetailPrice"]),
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = false
             };
 
@@ -303,7 +303,7 @@ namespace Vinaio.Reports
                 Name = "AveragePrice",
                 OptionalColumnName = "Precio promedio",
                 Calculation = (row, parameters) => Convert.ToDouble(row["AveragePrice"]),
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = false
             };
 
@@ -312,7 +312,7 @@ namespace Vinaio.Reports
                 Name = "FOB",
                 OptionalColumnName = "FOB",
                 Calculation = (row, parameters) => Convert.ToDouble(row["FOB"]),
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = false
             };
 
@@ -321,7 +321,7 @@ namespace Vinaio.Reports
                 Name = "Estruct",
                 OptionalColumnName = "Estruct",
                 Calculation = (row, parameters) => Convert.ToDouble(row["Estruct"]),
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = false
             };
 
@@ -330,7 +330,7 @@ namespace Vinaio.Reports
                 Name = "Delivery",
                 OptionalColumnName = "Costo de entrega",
                 Calculation = (row, parameters) => Convert.ToDouble(row["DeliveryCost"]),
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = false
             };
 
@@ -349,7 +349,7 @@ namespace Vinaio.Reports
                 Name = "CaseCost",
                 OptionalColumnName = "Costo por caja",
                 Calculation = (row, parameters) => Convert.ToInt32(row["Units"]) * Convert.ToDouble(parameters["BottleBaseCost"]),
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -371,7 +371,7 @@ namespace Vinaio.Reports
                 Name = "PriceInDollars",
                 OptionalColumnName = "Precio en dólares",
                 Calculation = (row, parameters) => (Convert.ToInt32(row["Units"]) * Convert.ToDouble(parameters["BottleBaseCost"]) + Convert.ToDouble(row["FOB"])) * 1.15,
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -380,7 +380,7 @@ namespace Vinaio.Reports
                 Name = "FedTax",
                 OptionalColumnName = "Impuesto federal",
                 Calculation = (row, parameters) => Convert.ToInt32(row["Units"]) * 0.21165,
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -397,7 +397,7 @@ namespace Vinaio.Reports
                     Convert.ToDouble(parameters["FedTax"]) +
                     Convert.ToDouble(row["WAR"]);
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -409,7 +409,7 @@ namespace Vinaio.Reports
                 {
                     return Convert.ToDouble(parameters["WholesalerCaseCost"]) / Convert.ToInt32(row["Units"]);
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -418,7 +418,7 @@ namespace Vinaio.Reports
                 Name = "WholesaleBottlePrice",
                 OptionalColumnName = "Precio por botella al mayoreo",
                 Calculation = (row, parameters) => Convert.ToDouble(row["CaseWholesalePrice"]) / Convert.ToInt32(row["Units"]),
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -441,7 +441,7 @@ namespace Vinaio.Reports
                     }
 
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -463,7 +463,7 @@ namespace Vinaio.Reports
                         return 0;
                     }
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -484,7 +484,7 @@ namespace Vinaio.Reports
                         return 0;
                     }
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -505,7 +505,7 @@ namespace Vinaio.Reports
                         return 0;
                     }
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -526,7 +526,7 @@ namespace Vinaio.Reports
                         return 0;
                     }
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -547,7 +547,7 @@ namespace Vinaio.Reports
                         return 0;
                     }
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -569,7 +569,7 @@ namespace Vinaio.Reports
                     }
 
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -591,7 +591,7 @@ namespace Vinaio.Reports
                     }
 
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -613,7 +613,7 @@ namespace Vinaio.Reports
                     }
 
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -633,7 +633,7 @@ namespace Vinaio.Reports
                     }
 
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -645,7 +645,7 @@ namespace Vinaio.Reports
                 {
                     return Convert.ToDouble(parameters["WholesaleGrossProfitTotal2"]) - Convert.ToDouble(row["Estruct"]);
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -657,7 +657,7 @@ namespace Vinaio.Reports
                 {
                     return Convert.ToDouble(parameters["WholesaleGrossProfitTotal3"]) - Convert.ToDouble(row["Estruct"]);
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -670,7 +670,7 @@ namespace Vinaio.Reports
                 {
                     return Convert.ToDouble(parameters["WholesalerCaseCost"]) * (1 - Convert.ToDouble(row["WholesaleCommisPercentage"]) / 100);
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -682,7 +682,7 @@ namespace Vinaio.Reports
                 {
                     return Convert.ToDouble(parameters["WholesalePaletDiscountTotal1"]) * (1 - Convert.ToDouble(row["WholesaleCommisPercentage"]) / 100);
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -694,7 +694,7 @@ namespace Vinaio.Reports
                 {
                     return Convert.ToDouble(parameters["WholesalePaletDiscountTotal2"]) * (1 - Convert.ToDouble(row["WholesaleCommisPercentage"]) / 100);
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -706,7 +706,7 @@ namespace Vinaio.Reports
                 {
                     return Convert.ToDouble(parameters["WholesalePaletDiscountTotal3"]) * (1 - Convert.ToDouble(row["WholesaleCommisPercentage"]) / 100);
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -718,7 +718,7 @@ namespace Vinaio.Reports
                 {
                     return Convert.ToDouble(parameters["WholesaleCommisTotalBase"]) - Convert.ToDouble(parameters["WholesalerCaseCost"]);
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -730,7 +730,7 @@ namespace Vinaio.Reports
                 {
                     return Convert.ToDouble(parameters["WholesaleGrossProfitBase"]) - Convert.ToDouble(row["Estruct"]);
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -743,7 +743,7 @@ namespace Vinaio.Reports
                 {
                     return Convert.ToDouble(parameters["WholesalerCaseCost"]) + Convert.ToDouble(row["STTax"]) + Convert.ToDouble(row["DeliveryCost"]);
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -755,7 +755,7 @@ namespace Vinaio.Reports
                 {
                     return Convert.ToDouble(parameters["RetailCaseCost"]) / Convert.ToDouble(row["Units"]);
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -767,7 +767,7 @@ namespace Vinaio.Reports
                 {
                     return Convert.ToDouble(parameters["CaseRetailPrice"]) / Convert.ToDouble(row["Units"]);
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -790,7 +790,7 @@ namespace Vinaio.Reports
                     }
 
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -812,7 +812,7 @@ namespace Vinaio.Reports
                         return 0;
                     }
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -833,7 +833,7 @@ namespace Vinaio.Reports
                         return 0;
                     }
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -849,7 +849,7 @@ namespace Vinaio.Reports
                 {
                     return Convert.ToDouble(parameters["RetailPaletDiscountTotal1"]) * (1 - Convert.ToDouble(row["RetailCommisPercentage"]) / 100);
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -861,7 +861,7 @@ namespace Vinaio.Reports
                 {
                     return Convert.ToDouble(parameters["RetailPaletDiscountTotal2"]) * (1 - Convert.ToDouble(row["RetailCommisPercentage"]) / 100);
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -873,7 +873,7 @@ namespace Vinaio.Reports
                 {
                     return Convert.ToDouble(parameters["RetailPaletDiscountTotal3"]) * (1 - Convert.ToDouble(row["RetailCommisPercentage"]) / 100);
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -897,7 +897,7 @@ namespace Vinaio.Reports
                     }
 
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -919,7 +919,7 @@ namespace Vinaio.Reports
                     }
 
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -941,7 +941,7 @@ namespace Vinaio.Reports
                     }
 
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -961,7 +961,7 @@ namespace Vinaio.Reports
                     }
 
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -973,7 +973,7 @@ namespace Vinaio.Reports
                 {
                     return Convert.ToDouble(parameters["RetailGrossProfitTotal2"]) - Convert.ToDouble(row["Estruct"]);
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -985,7 +985,7 @@ namespace Vinaio.Reports
                 {
                     return Convert.ToDouble(parameters["RetailGrossProfitTotal3"]) - Convert.ToDouble(row["Estruct"]);
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -1009,7 +1009,7 @@ namespace Vinaio.Reports
                         return 0;
                     }
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -1030,7 +1030,7 @@ namespace Vinaio.Reports
                         return 0;
                     }
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -1051,7 +1051,7 @@ namespace Vinaio.Reports
                         return 0;
                     }
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -1063,7 +1063,7 @@ namespace Vinaio.Reports
                 {
                     return Convert.ToDouble(row["AveragePrice"]) * (1 - Convert.ToDouble(row["WholesaleCommisPercentage"]) / 100);
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -1074,7 +1074,7 @@ namespace Vinaio.Reports
                 {
                     return Convert.ToDouble(row["CaseRetailPrice"]) * (Convert.ToDouble(row["PPAYPercentage"]) / 100);
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -1086,7 +1086,7 @@ namespace Vinaio.Reports
                 {
                     return Convert.ToDouble(parameters["RetailCaseCost"]) - Convert.ToDouble(parameters["RetailCommisTotal"]) - Convert.ToDouble(row["PPAYPercentage"]);
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 
@@ -1098,7 +1098,7 @@ namespace Vinaio.Reports
                 {
                     return Convert.ToDouble(parameters["RetailGrossProfit"]) - Convert.ToDouble(row["Estruct"]);
                 },
-                Format = "\"$\"#,##0.00",
+                Format = "$#,##0.00",
                 RequiresExternalValues = true
             };
 

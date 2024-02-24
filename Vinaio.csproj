@@ -6,10 +6,18 @@
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <UseWindowsForms>true</UseWindowsForms>
+    <Platforms>AnyCPU;x64</Platforms>
+    <ApplicationIcon>logo_cuK_icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Icon.png" />
     <None Remove="Logo.png" />
+    <None Remove="logo_1.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="logo_cuK_icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,7 +28,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Icon.png" />
     <Resource Include="Logo.png" />
+    <Resource Include="logo_1.png" />
   </ItemGroup>
 
 </Project>

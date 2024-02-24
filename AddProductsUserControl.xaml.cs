@@ -98,8 +98,22 @@ namespace Vinaio
                                     stackPanel.Children.Add(comboBox);
                                     //stackPanel.Children.Remove(textBox4); // Remove the TextBox from the StackPanel
                                     break; // Exit the loop once the TextBox is found
-                                }   
-                                
+                                }
+                                else if (control is TextBox textBox5 && textBox5.Name == "txtYearAdded")
+                                {
+                                    ComboBox comboBox = new ComboBox();
+                                    comboBox.Name = "cmbYearAdded";
+                                    for (int i = DateTime.Now.Year; i > DateTime.Now.Year - 30; i--)
+                                    {
+                                        comboBox.Items.Add(i);
+                                    }
+                                    comboBox.SelectionChanged += ComboBox_SelectionChanged;
+                                    textBox5.Visibility = Visibility.Collapsed;
+                                    stackPanel.Children.Add(comboBox);
+                                    //stackPanel.Children.Remove(textBox3); // Remove the TextBox from the StackPanel
+                                    break; // Exit the loop once the TextBox is found
+                                }
+
                             }
                         }
                     }
@@ -237,6 +251,7 @@ namespace Vinaio
                     Background = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromArgb(0, 0, 0, 0)),
                     //remove the border
                     BorderThickness = new Thickness(0.5),
+                    HorizontalAlignment = HorizontalAlignment.Stretch
                 };
 
                 textBox.TextChanged += TextBox_TextChanged;
@@ -244,10 +259,13 @@ namespace Vinaio
                 // Create a StackPanel for each pair of label and input
                 StackPanel labelInputPair = new StackPanel();
                 labelInputPair.Orientation = Orientation.Vertical;
+                labelInputPair.HorizontalAlignment = HorizontalAlignment.Stretch;
 
                 // Add label and TextBox to the StackPanel
                 labelInputPair.Children.Add(label);
                 labelInputPair.Children.Add(textBox);
+
+                labelInputPair.Margin = new Thickness(2);
 
                 // Add the StackPanel to the WrapPanel
                 wrapPanel.Children.Add(labelInputPair);

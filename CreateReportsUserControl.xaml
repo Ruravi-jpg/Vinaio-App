@@ -9,7 +9,7 @@
         <Button x:Name="BaseReport" Content="Costos Máster" Margin="0,125,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="179" Click="CreateBaseReport" Background="{DynamicResource MaterialDesignLightSeparatorBackground}" Foreground="{DynamicResource SecondaryAccentColor}"/>
         <Button Content="New Jersey" HorizontalAlignment="Center" Margin="0,162,0,0" VerticalAlignment="Top" Width="179" Click="CreateNewJerseyReport" Background="{DynamicResource MaterialDesignLightSeparatorBackground}" Foreground="{DynamicResource SecondaryAccentColor}"/>
         <Button Content="New York" HorizontalAlignment="Center" Margin="0,199,0,0" VerticalAlignment="Top" Width="179" Click="CreateNewYorkReport" Background="{DynamicResource MaterialDesignLightSeparatorBackground}" Foreground="{DynamicResource SecondaryAccentColor}"/>
-        <Button Content="Vinaio" HorizontalAlignment="Center" Margin="0,236,0,0" VerticalAlignment="Top" Width="179" Click="CreateVinaioReport" Background="{DynamicResource MaterialDesignLightSeparatorBackground}" Foreground="{DynamicResource SecondaryAccentColor}"/>
+        <Button Content="Provi" HorizontalAlignment="Center" Margin="0,236,0,0" VerticalAlignment="Top" Width="179" Click="CreateVinaioReport" Background="{DynamicResource MaterialDesignLightSeparatorBackground}" Foreground="{DynamicResource SecondaryAccentColor}"/>
         <TextBlock Margin="119,33,119,0" TextWrapping="Wrap" Text="Generar Reportes" VerticalAlignment="Top" Height="47" Foreground="{DynamicResource SecondaryAccentColor}" FontSize="36"/>
     </Grid>
 </UserControl>

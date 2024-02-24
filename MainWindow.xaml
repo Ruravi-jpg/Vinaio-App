@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:Vinaio"
         mc:Ignorable="d"
         Title="VinaioApp" Height="585" Width="1005"
-        Background="{StaticResource PrimaryColor}" WindowState="Maximized">
+        Background="{StaticResource PrimaryColor}" WindowState="Maximized" Icon="/logo_1.png">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>

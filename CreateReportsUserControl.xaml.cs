@@ -29,27 +29,27 @@ namespace Vinaio
         {
             MainReport mainReport = new MainReport();
 
-            mainReport.GenerateReport();
+            mainReport.ShowDataGridWindow();
         }
 
         private void CreateNewJerseyReport(object sender, RoutedEventArgs e)
         {
             NewJerseyReport newJerseyReport = new();
 
-            newJerseyReport.GenerateReport();
+            newJerseyReport.ShowDataGridWindow();
         }
 
         private void CreateNewYorkReport(object sender, RoutedEventArgs e)
         {
             NewYorkReport newYorkReport = new();
 
-            newYorkReport.GenerateReport();
+            newYorkReport.ShowDataGridWindow();
         }
 
         private void CreateVinaioReport(object sender, RoutedEventArgs e)
         {
             VinaioReport vinaioReport = new();
-            vinaioReport.GenerateReport();
+            vinaioReport.ShowDataGridWindow();
         }
     }
 }
